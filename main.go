@@ -16,11 +16,9 @@ TODO: Parser les fichiers yaml (
 -TODO: Mettre à Jour le README à la fin de la session
 */
 import (
-	"fmt"
-	"os"
+	"github.com/Salayna/create-project-cli/internal/cli"
 )
 
 func main() {
-	arg := os.Args[1]
-	fmt.Println(arg)
+	cli.Cli()
 }
