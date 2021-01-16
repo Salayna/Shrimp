@@ -7,7 +7,8 @@ TODO: Créer les flags (-h : afiche l'aide
   si pas d'option affiche le -h
 -v affiche en mode verbose toute les info de création
 -l language
--p Nom du Projet )
+-p Nom du Projet)
+TODO: créer un dossier à la racine à partir du nom (parse également )
 TODO: Parser les fichiers yaml (
 	fichier de configuration principal de projet
 	fichier de language dans ./config

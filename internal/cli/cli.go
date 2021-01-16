@@ -2,8 +2,8 @@ package cli
 
 import (
 	"flag"
-	"fmt"
 
+	filesystem "github.com/Salayna/create-project-cli/internal/arborescence"
 	"rsc.io/getopt"
 )
 
@@ -36,5 +36,6 @@ func Init() {
 //Cli is the cli function which will handle all the cli calls
 func Cli() {
 	Init()
-	fmt.Println("Name:", name)
+	args := []string{"init", "-y"}
+	filesystem.ExecuteCommand("npm", args)
 }
