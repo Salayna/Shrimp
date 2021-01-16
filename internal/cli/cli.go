@@ -35,6 +35,18 @@ func Init() {
 	getopt.Parse()
 }
 
+//CheckArguments will check the arguments of the CLI
+func CheckArguments() {
+	Version()
+	if (((name) == "") || (language == "")) && (v == false) && (file == "") {
+		Interactive()
+	} else if file != "" {
+		if (name != "") || (language != "") {
+			log.Fatal("You can't pass other arguments with -f or --file")
+		}
+	}
+}
+
 //Version show the version of the current cli
 func Version() {
 	if v == true && len(os.Args) == 2 {
@@ -84,13 +96,5 @@ func Interactive() {
 //Cli is the cli function which will handle all the cli calls
 func Cli() {
 	Init()
-	fmt.Println(file)
-	if (((name) == "") || (language == "")) && (v == false) && (file == "") {
-		Interactive()
-	} else if file != "" {
-		if (name != "") || (language != "") {
-			log.Fatal("You can't pass other arguments with -f or --file")
-		}
-	}
-	Version()
+	CheckArguments()
 }
