@@ -10,12 +10,12 @@
   },
   "commands": {
     "npm-init": {
-      "base": "",
-      "arguments": ["init"]
+      "base": "npm",
+      "arguments": ["init", "-y"]
     },
     "tsc-init": {
       "base": "tsc",
-      "arguments": ["init"]
+      "arguments": ["--init"]
     }
   },
   "files": {

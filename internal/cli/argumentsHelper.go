@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/Salayna/create-project-cli/internal/filesystemhelper"
+	"github.com/Salayna/create-project/internal/filesystemhelper"
 	"github.com/manifoldco/promptui"
 	"rsc.io/getopt"
 )
@@ -90,6 +90,6 @@ func Interactive() {
 	if language == "" {
 		language = promptLanguage()
 	}
-	fmt.Println("Project name is", name)
+	fmt.Println("Project created at ", name)
 	fmt.Println("Type", language)
 }

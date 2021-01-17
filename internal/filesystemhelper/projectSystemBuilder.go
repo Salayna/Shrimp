@@ -3,7 +3,7 @@ package filesystemhelper
 import (
 	"fmt"
 
-	jsonparser "github.com/Salayna/create-project-cli/internal/parser"
+	jsonparser "github.com/Salayna/create-project/internal/parser"
 )
 
 //BuildProjectDirectories will build the directories, it takes a map as an argument
@@ -21,5 +21,12 @@ func BuildProjectDirectories(directories map[string]jsonparser.Directory) {
 func CreateProjectFiles(files map[string]jsonparser.File) {
 	for _, element := range files {
 		CreateFile(element.Directory + "/" + element.Name)
+	}
+}
+
+//LaunchCommands will launch the specified commands
+func LaunchCommands(commands map[string]jsonparser.Command) {
+	for _, element := range commands {
+		ExecuteCommand(element.Base, element.Arguments)
 	}
 }

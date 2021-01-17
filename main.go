@@ -8,7 +8,7 @@ TODO: Parser les fichiers yaml (
 -TODO: Mettre à Jour le README à la fin de la session
 */
 import (
-	"github.com/Salayna/create-project-cli/internal/cli"
+	"github.com/Salayna/create-project/internal/cli"
 )
 
 func main() {
