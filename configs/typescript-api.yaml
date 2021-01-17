@@ -1,8 +1,0 @@
-directories:
-  base: src
-  sub: ["config"]
-files:
-  - ./src/index.js
-commands:
-  npm: init
-  tsc: --init

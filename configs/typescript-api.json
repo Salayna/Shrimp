@@ -1,0 +1,27 @@
+{
+  "directories": {
+    "src": {
+      "baseDir": "src",
+      "subDir": ["config", "controllers", "services", "models"]
+    },
+    "scripts": {
+      "baseDir": "scripts"
+    }
+  },
+  "commands": {
+    "npm-init": {
+      "base": "",
+      "arguments": ["init"]
+    },
+    "tsc-init": {
+      "base": "tsc",
+      "arguments": ["init"]
+    }
+  },
+  "files": {
+    "eslintr": {
+      "name": ".eslintrc",
+      "directory": "./"
+    }
+  }
+}

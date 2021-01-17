@@ -70,7 +70,7 @@ func promptName() string {
 func promptLanguage() string {
 	langPrompt := promptui.Select{
 		Label: "Language",
-		Items: filesystemhelper.GetConfigs("./configs", ".yaml"),
+		Items: filesystemhelper.GetConfigs("./configs", ".json"),
 	}
 
 	_, promptLanguage, langErr := langPrompt.Run()

@@ -20,14 +20,14 @@ func check(e error) {
 
 //CreateDirectory Will create a directory using the project name
 func CreateDirectory(name string) {
-	err := os.Mkdir(name, 0600)
+	err := os.Mkdir(name, 0777)
 	check(err)
 }
 
 //CreateFile will create files
 func CreateFile(file string) {
 	d := []byte("")
-	err := ioutil.WriteFile(file, d, 0600)
+	err := ioutil.WriteFile(file, d, 0666)
 	check(err)
 }
 
