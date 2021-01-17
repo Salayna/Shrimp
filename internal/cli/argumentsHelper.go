@@ -11,6 +11,7 @@ import (
 	"rsc.io/getopt"
 )
 
+var version = "development"
 var name string
 var file string
 var language string
@@ -51,7 +52,7 @@ func CheckArguments() {
 //Version show the version of the current cli
 func Version() {
 	if v == true && len(os.Args) == 2 {
-		fmt.Println("V 1.0.0")
+		fmt.Println(version)
 	}
 }
 
