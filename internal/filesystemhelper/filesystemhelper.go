@@ -1,4 +1,4 @@
-package filesystem
+package filesystemhelper
 
 import (
 	"fmt"
@@ -6,6 +6,8 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"strings"
 	"syscall"
 )
 
@@ -41,4 +43,26 @@ func ExecuteCommand(command string, arguments []string) {
 	fmt.Println(args)
 	execErr := syscall.Exec(binary, args, env)
 	check(execErr)
+}
+
+// OpenFile handles files
+func OpenFile(name string) string {
+	data, err := ioutil.ReadFile(name)
+	check(err)
+	return string(data)
+}
+
+//GetConfigs Parse and return all the configfiles with the corresponding extension
+func GetConfigs(directory string, extension string) []string {
+	var parsedFiles []string
+	files, err := ioutil.ReadDir("./configs")
+	check(err)
+	for _, f := range files {
+		if filepath.Ext(f.Name()) == extension {
+			res := strings.ReplaceAll(f.Name(), extension, "")
+			parsedFiles = append(parsedFiles, res)
+		}
+	}
+	fmt.Println(parsedFiles)
+	return parsedFiles
 }

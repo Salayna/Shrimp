@@ -134,4 +134,5 @@ fabric.properties
 !.vscode/extensions.json
 *.code-workspace
 create-project-cli
+example_files/
 # End of https://www.toptal.com/developers/gitignore/api/go,intellij,vscode
