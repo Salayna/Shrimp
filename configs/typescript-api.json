@@ -9,13 +9,13 @@
     }
   },
   "commands": {
-    "npm-init": {
-      "base": "npm",
-      "arguments": ["init", "-y"]
-    },
     "tsc-init": {
       "base": "tsc",
       "arguments": ["--init"]
+    },
+    "npm-init": {
+      "base": "npm",
+      "arguments": ["init", "-y"]
     }
   },
   "files": {
