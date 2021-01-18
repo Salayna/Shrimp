@@ -24,8 +24,8 @@ And with the global installation you can just run `create-project` with it's arg
 - **-n || --name**: is the name/directory of the project
 - **-l || --language**: is the language of the project to be chosen from a specific set of configuration files, stored in the configs folder
 - **-f || --file**: **Not Implement yet**is if you wanna created a project from a configuartion file (like for a one time project)
-- **-v || --verbose**
-- **-v || --version**
+- **-v || --verbose** **Not Implement yet**
+- **-v || --version** **Not Implement yet**
 
 ### Adding configuations
 
