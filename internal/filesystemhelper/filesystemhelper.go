@@ -8,7 +8,6 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
-	"syscall"
 )
 
 func check(e error) {
@@ -33,16 +32,10 @@ func CreateFile(file string) {
 
 //ExecuteCommand will execute commands according to the corresponding yaml file
 func ExecuteCommand(command string, arguments []string) {
-	binary, lookErr := exec.LookPath(command)
-	check(lookErr)
-	env := os.Environ()
-	args := []string{command}
-	for i := 0; i < len(arguments); i++ {
-		args = append(args, arguments[i])
-	}
-	fmt.Println(args)
-	execErr := syscall.Exec(binary, args, env)
-	check(execErr)
+	out, err := exec.Command(command, arguments...).Output()
+	check(err)
+	output := string(out[:])
+	fmt.Println(output)
 }
 
 // OpenFile handles files
