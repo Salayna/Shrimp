@@ -2,6 +2,7 @@ package filesystemhelper
 
 import (
 	"fmt"
+	"os"
 
 	jsonparser "github.com/Salayna/shrimp/internal/parser"
 )
@@ -25,7 +26,9 @@ func CreateProjectFiles(files map[string]jsonparser.File) {
 }
 
 //LaunchCommands will launch the specified commands
-func LaunchCommands(commands map[string]jsonparser.Command) {
+func LaunchCommands(directory string ,commands map[string]jsonparser.Command) {
+	err := os.Chdir(directory)
+	check(err)
 	for _, element := range commands {
 		ExecuteCommand(element.Base, element.Arguments)
 	}

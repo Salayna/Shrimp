@@ -24,7 +24,8 @@ func CheckConfigurationFolder() {
 }
 //BuildArborescence will build the final Arborescence
 func BuildArborescence() {
-	var data = filesystemhelper.OpenFile("/Users/salayna/Documents/Dev/Go_Projects/create_project_cli/configs/" + language + ".json")
+	homeDir, _ := os.UserHomeDir();
+	var data = filesystemhelper.OpenFile(homeDir+ "/.shrimp/" + language + ".json")
 	filesystemhelper.CreateDirectory(name)
 	os.Chdir(name)
 	newDir, err := os.Getwd()
@@ -32,12 +33,12 @@ func BuildArborescence() {
 		log.Fatal(err)
 		os.Exit(1)
 	}
-	fmt.Println(newDir + " directory created")
+	fmt.Println(newDir + " directory created....")
 
 	var config jsonparser.Config
 	jsonparser.ParseConfig([]byte(data), &config)
 
 	filesystemhelper.BuildProjectDirectories(config.Directories)
 	filesystemhelper.CreateProjectFiles(config.Files)
-	filesystemhelper.LaunchCommands(config.Commands)
+	filesystemhelper.LaunchCommands(newDir ,config.Commands)
 }

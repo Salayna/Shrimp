@@ -20,7 +20,7 @@ func check(e error) {
 
 //CreateDirectory Will create a directory using the project name
 func CreateDirectory(name string) {
-	err := os.Mkdir(name, 0777)
+	err := os.MkdirAll(name, 0777)
 	check(err)
 }
 
