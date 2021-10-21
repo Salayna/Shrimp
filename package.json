@@ -1,6 +1,6 @@
 {
   "name": "@salayna/shrimp",
-  "version": "1.0.0",
+  "version": "0.5.3",
   "description": "Yet another Project Builder",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "goBinary": {
     "name": "shrimp",
-    "path": "./bin",
+    "path": "./dist",
     "url": "https://github.com/Salayna/Shrimp/releases/download/v{{version}}/shrimp_{{version}}_{{platform}}_{{arch}}.tar.gz"
   },
   "author": "@salayna",
