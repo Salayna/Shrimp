@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/Salayna/create-project/internal/filesystemhelper"
+	"github.com/Salayna/shrimp/internal/filesystemhelper"
 	"github.com/manifoldco/promptui"
 	"rsc.io/getopt"
 )
@@ -71,7 +71,7 @@ func promptName() string {
 func promptLanguage() string {
 	langPrompt := promptui.Select{
 		Label: "Language",
-		Items: filesystemhelper.GetConfigs("./configs", ".json"),
+		Items: filesystemhelper.GetConfigs("/Users/salayna/Documents/Dev/Go_Projects/create_project_cli/configs/", ".json"),
 	}
 
 	_, promptLanguage, langErr := langPrompt.Run()

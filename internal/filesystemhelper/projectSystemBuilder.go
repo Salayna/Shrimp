@@ -3,7 +3,7 @@ package filesystemhelper
 import (
 	"fmt"
 
-	jsonparser "github.com/Salayna/create-project/internal/parser"
+	jsonparser "github.com/Salayna/shrimp/internal/parser"
 )
 
 //BuildProjectDirectories will build the directories, it takes a map as an argument

@@ -1,4 +1,4 @@
-module github.com/Salayna/create-project
+module github.com/Salayna/shrimp
 
 go 1.15
 

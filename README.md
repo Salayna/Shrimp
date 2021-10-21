@@ -8,7 +8,7 @@ First you'll need to download or clone the sources of the project
 
 ### local install
 
-To install it locally you can just run the following command `go build -o ./bin/create-project`
+To install it locally you can just run the following command `go build -o ./bin/shrimp`
 
 ### global install
 
@@ -17,7 +17,7 @@ To install it gobally just run a `go install of the project`
 ## Running the app
 
 With the local installation you can run the cli with this command `./{path/to/your/binary/file}`
-And with the global installation you can just run `create-project` with it's arguments
+And with the global installation you can just run `shrimp` with it's arguments
 
 ### The arguments
 

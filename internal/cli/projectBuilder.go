@@ -5,13 +5,17 @@ import (
 	"log"
 	"os"
 
-	"github.com/Salayna/create-project/internal/filesystemhelper"
-	jsonparser "github.com/Salayna/create-project/internal/parser"
+	"github.com/Salayna/shrimp/internal/filesystemhelper"
+	jsonparser "github.com/Salayna/shrimp/internal/parser"
 )
 
+//CheckConfigurationFolder Check is the configuration folder is set before using the CLI
+func CheckConfigurationFolder() {
+
+}
 //BuildArborescence will build the final Arborescence
 func BuildArborescence() {
-	var data = filesystemhelper.OpenFile("./configs/" + language + ".json")
+	var data = filesystemhelper.OpenFile("/Users/salayna/Documents/Dev/Go_Projects/create_project_cli/configs/" + language + ".json")
 	filesystemhelper.CreateDirectory(name)
 	os.Chdir(name)
 	newDir, err := os.Getwd()

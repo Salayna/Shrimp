@@ -1,4 +1,5 @@
-{
+ommands": {
+    "tsc-init": {{
   "directories": {
     "src": {
       "baseDir": "src",

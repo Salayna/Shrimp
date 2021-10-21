@@ -1,0 +1,43 @@
+{
+  "directories": {
+    "src": {
+      "baseDir": "internal"
+    },
+    "scripts": {
+      "baseDir": "pkg"
+    },
+    "deployments": {
+      "baseDir": "deployments"
+    },
+    "test": {
+      "baseDir": "test"
+    },
+    "docs": {
+      "baseDir": "docs"
+    }
+  },
+  "commands": {
+    "git": {
+      "base": "git",
+      "arguments": ["init"]
+    },
+    "golang init": {
+      "base": "go",
+      "arguments": ["mod", "init"]
+    }
+  },
+  "files": {
+    "LICENSE": {
+      "name": "LICENSE",
+      "directory": "./"
+    },
+    "Main": {
+      "name": "main.go",
+      "directory": "./"
+    },
+    "ReadMe": {
+      "name": "README.md",
+      "directory": "./"
+    }
+  }
+}

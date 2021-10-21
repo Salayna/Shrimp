@@ -48,7 +48,7 @@ func OpenFile(name string) string {
 //GetConfigs Parse and return all the configfiles with the corresponding extension
 func GetConfigs(directory string, extension string) []string {
 	var parsedFiles []string
-	files, err := ioutil.ReadDir("./configs")
+	files, err := ioutil.ReadDir("/Users/salayna/Documents/Dev/Go_Projects/create_project_cli/configs/")
 	check(err)
 	for _, f := range files {
 		if filepath.Ext(f.Name()) == extension {
