@@ -11,7 +11,12 @@ import (
 
 //CheckConfigurationFolder Check is the configuration folder is set before using the CLI
 func CheckConfigurationFolder() {
-
+	homeDir, _ := os.UserHomeDir()
+	_, err := filesystemhelper.CheckIfFolderExists(homeDir + "/.shrimp");
+	if err != nil {
+		log.Fatal(err)
+		os.Exit(1);
+	}
 }
 //BuildArborescence will build the final Arborescence
 func BuildArborescence() {

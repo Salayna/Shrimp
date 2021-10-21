@@ -23,6 +23,17 @@ func CreateDirectory(name string) {
 	check(err)
 }
 
+//CheckIfFolderExists
+func CheckIfFolderExists(folder string) (string, error) {
+	_, err := os.ReadDir(folder)
+	if err != nil {
+		fmt.Println(err);
+		return "", err
+	}
+	fmt.Println("Folder opened")
+	return "Folder exist", nil
+}
+
 //CreateFile will create files
 func CreateFile(file string) {
 	d := []byte("")
