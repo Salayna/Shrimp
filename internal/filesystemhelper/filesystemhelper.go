@@ -13,6 +13,7 @@ import (
 func check(e error) {
 	if e != nil {
 		log.Fatal(e)
+		fmt.Println(e)
 		os.Exit(1)
 	}
 }
@@ -58,8 +59,9 @@ func OpenFile(name string) string {
 
 //GetConfigs Parse and return all the configfiles with the corresponding extension
 func GetConfigs(directory string, extension string) []string {
+	homeDir, _ := os.UserHomeDir();
 	var parsedFiles []string
-	files, err := ioutil.ReadDir("/Users/salayna/Documents/Dev/Go_Projects/create_project_cli/configs/")
+	files, err := ioutil.ReadDir( homeDir + "/.shrimp")
 	check(err)
 	for _, f := range files {
 		if filepath.Ext(f.Name()) == extension {

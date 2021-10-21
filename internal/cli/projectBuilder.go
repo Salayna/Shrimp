@@ -14,8 +14,12 @@ func CheckConfigurationFolder() {
 	homeDir, _ := os.UserHomeDir()
 	_, err := filesystemhelper.CheckIfFolderExists(homeDir + "/.shrimp");
 	if err != nil {
-		log.Fatal(err)
-		os.Exit(1);
+		fmt.Println("Creating config folder.....");
+		err := os.Mkdir(homeDir + "/.shrimp", 0777)
+		if err != nil {
+			log.Fatal(err)
+			os.Exit(1)
+		}
 	}
 }
 //BuildArborescence will build the final Arborescence

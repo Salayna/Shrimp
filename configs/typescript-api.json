@@ -1,9 +1,13 @@
-ommands": {
-    "tsc-init": {{
+{
   "directories": {
     "src": {
       "baseDir": "src",
-      "subDir": ["config", "controllers", "services", "models"]
+      "subDir": [
+        "config",
+        "controllers",
+        "services",
+        "models"
+      ]
     },
     "scripts": {
       "baseDir": "scripts"
@@ -12,11 +16,16 @@ ommands": {
   "commands": {
     "tsc-init": {
       "base": "tsc",
-      "arguments": ["--init"]
+      "arguments": [
+        "--init"
+      ]
     },
     "npm-init": {
       "base": "npm",
-      "arguments": ["init", "-y"]
+      "arguments": [
+        "init",
+        "-y"
+      ]
     }
   },
   "files": {
