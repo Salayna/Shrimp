@@ -22,7 +22,7 @@
   "goBinary": {
     "name": "shrimp",
     "path": "./dist",
-    "url": "https://github.com/Salayna/Shrimp/releases/download/v{{version}}/shrimp_{{version}}_{{platform}}_{{arch}}.tar.gz"
+    "url": "https://github.com/Salayna/Shrimp/releases/download/v{{version}}/Shrimp_{{version}}_{{platform}}_{{arch}}.tar.gz"
   },
   "author": "@salayna",
   "license": "MIT",

@@ -15,15 +15,15 @@ builds:
       - darwin
 archives:
   - replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
+      darwin: darwin
+      linux: linux
+      windows: windows
       386: i386
       amd64: x86_64
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .projectName }}_{{ .version }}_{{ .os }}_{{ .arch }}"
+  name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 changelog:
   sort: asc
   filters:
