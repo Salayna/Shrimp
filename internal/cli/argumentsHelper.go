@@ -13,7 +13,8 @@ import (
 
 var version = "development"
 var name string
-var file string
+var config string
+var remote bool
 var language string
 var v bool
 
@@ -21,16 +22,12 @@ var v bool
 func Init() {
 	flag.StringVar(&name, "name", "", "Set the name of the project")
 	flag.StringVar(&language, "language", "", "get the language")
-	flag.BoolVar(&v, "verbose", false, "show verbose output if there are multiple arguments")
-	flag.BoolVar(&v, "version", false, "Show current cli version when only -v is called")
-	flag.StringVar(&file, "file", "", "create a project from a yaml file")
+	flag.StringVar(&config, "config", "", "create a project from a remote config file")
 	//flag.StringVar(&help, "help", flag.PrintDefaults(), "Display help")
 	getopt.Aliases(
 		"n", "name",
-		"f", "file",
+		"c", "config",
 		"l", "language",
-		"v", "verbose",
-		"V", "version",
 		//"h", "help",
 	)
 
@@ -39,20 +36,15 @@ func Init() {
 
 //CheckArguments will check the arguments of the CLI
 func CheckArguments() {
-	Version()
-	if (((name) == "") || (language == "")) && (v == false) && (file == "") {
-		Interactive()
-	} else if file != "" {
-		if (name != "") || (language != "") {
-			log.Fatal("You can't pass other arguments with -f or --file")
-		}
+	if config != "" {
+		remote = true
 	}
-}
-
-//Version show the version of the current cli
-func Version() {
-	if v == true && len(os.Args) == 2 {
-		fmt.Println(version)
+	if (((name) == "") || (language == "")) && (config == "") {
+		Interactive()
+	} else if config != "" {
+		if language != "" {
+			log.Fatal("You can only pass a name argument(-n or --name) with -c or --config")
+		}
 	}
 }
 
@@ -69,9 +61,10 @@ func promptName() string {
 }
 
 func promptLanguage() string {
+	homeDir, _ := os.UserHomeDir()
 	langPrompt := promptui.Select{
 		Label: "Language",
-		Items: filesystemhelper.GetConfigs("/Users/salayna/Documents/Dev/Go_Projects/create_project_cli/configs/", ".json"),
+		Items: filesystemhelper.GetConfigs(homeDir + "/.shrimp", ".json"),
 	}
 
 	_, promptLanguage, langErr := langPrompt.Run()

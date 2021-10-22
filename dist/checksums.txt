@@ -1,3 +1,0 @@
-20119003bb47d30e63c6247faaec5f878a0abff99481cd0a1bd12b03b13139d2  Shrimp_0.6.0_linux_amd64.tar.gz
-53710c80effe700ba0338fd10dd5240cf0e393042d133d2cea52446499615fcf  Shrimp_0.6.0_windows_amd64.tar.gz
-b4afbe10eab0657beb5e6e0a67c370121d5595d606a3a02ab9642c6cbd78515d  Shrimp_0.6.0_darwin_amd64.tar.gz

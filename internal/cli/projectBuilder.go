@@ -25,7 +25,12 @@ func CheckConfigurationFolder() {
 //BuildArborescence will build the final Arborescence
 func BuildArborescence() {
 	homeDir, _ := os.UserHomeDir();
-	var data = filesystemhelper.OpenFile(homeDir+ "/.shrimp/" + language + ".json")
+	var data string
+	if remote {
+		data = filesystemhelper.GetFileContentFromInternet(config)
+	} else {
+		data = filesystemhelper.OpenFile(homeDir+ "/.shrimp/" + language + ".json")
+	}
 	filesystemhelper.CreateDirectory(name)
 	os.Chdir(name)
 	newDir, err := os.Getwd()
