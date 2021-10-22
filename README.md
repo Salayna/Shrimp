@@ -4,11 +4,9 @@ _I'm a newbie in Golang, I'm still figuring out things so you'll probably have a
 
 ## Install
 
-First you'll need to download or clone the sources of the project
-
 ### Just building a binary file
 
-To install it locally you can just run the following command `go build -o ./bin/shrimp`
+To install it locally you can just run the following command `go build -o ./bin/shrimp` after cloning the project sources
 
 ### global install
 
