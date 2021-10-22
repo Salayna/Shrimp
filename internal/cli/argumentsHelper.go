@@ -14,6 +14,7 @@ import (
 var version = "development"
 var name string
 var config string
+var remote bool
 var language string
 var v bool
 
@@ -35,10 +36,13 @@ func Init() {
 
 //CheckArguments will check the arguments of the CLI
 func CheckArguments() {
-	if (((name) == "") || (language == "")) && (v == false) && (config == "") {
+	if config != "" {
+		remote = true
+	}
+	if (((name) == "") || (language == "")) && (config == "") {
 		Interactive()
 	} else if config != "" {
-		if (name != "") || (language != "") {
+		if language != "" {
 			log.Fatal("You can only pass a name argument(-n or --name) with -c or --config")
 		}
 	}
