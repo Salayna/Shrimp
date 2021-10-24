@@ -20,9 +20,6 @@ With the local installation you can run the cli with this command `./{path/to/yo
 _this part is deprecated, while the arguments are still there I'm not satisfied with them so by the release of V1 these will drastically change_
 - **-n || --name**: is the name/directory of the project
 - **-l || --language**: is the language of the project to be chosen from a specific set of configuration files, stored in the configs folder
-- **-f || --file**: **Not Implement yet**is if you wanna created a project from a configuartion file (like for a one time project)
-- **-v || --verbose** **Not Implement yet**
-- **-v || --version** **Not Implement yet**
 
 ### Adding configuations
 
