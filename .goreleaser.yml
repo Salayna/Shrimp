@@ -19,7 +19,7 @@ archives:
   - replacements:
       darwin: darwin
       linux: linux
-      windows: windows
+      windows: windows©
 checksum:
   name_template: 'checksums.txt'
 snapshot:

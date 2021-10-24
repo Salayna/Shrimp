@@ -1,6 +1,6 @@
 {
   "name": "@salayna/shrimp-cli",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "description": "Yet another Project Builder",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,13 @@
   "bugs": {
     "url": "https://github.com/Salayna/Shrimp/issues"
   },
-  "homepage": "https://github.com/Salayna/Shrimp#readme"
+  "homepage": "https://github.com/Salayna/Shrimp#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

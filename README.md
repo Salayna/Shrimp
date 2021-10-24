@@ -8,9 +8,9 @@ _I'm a newbie in Golang, I'm still figuring out things so you'll probably have a
 
 To install it locally you can just run the following command `go build -o ./bin/shrimp` after cloning the project sources
 
-[comment]: <> (### global install)
+### global install
 
-[comment]: <> (You can Install it using the command ``npm install -g @salayna/shrimp_cli``)
+You can Install it using the command ``npm install -g @salayna/shrimp_cli``
 ## Running the app
 
 With the local installation you can run the cli with this command `./{path/to/your/binary/file}`
