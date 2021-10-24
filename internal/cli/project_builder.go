@@ -5,14 +5,14 @@ import (
 	"log"
 	"os"
 
-	"github.com/Salayna/shrimp/internal/filesystemhelper"
+	"github.com/Salayna/shrimp/internal/file_system"
 	jsonparser "github.com/Salayna/shrimp/internal/parser"
 )
 
 //CheckConfigurationFolder Check is the configuration folder is set before using the CLI
 func CheckConfigurationFolder() {
 	homeDir, _ := os.UserHomeDir()
-	_, err := filesystemhelper.CheckIfFolderExists(homeDir + "/.shrimp");
+	_, err := fileSystem.CheckIfFolderExists(homeDir + "/.shrimp");
 	if err != nil {
 		fmt.Println("Creating config folder.....");
 		err := os.Mkdir(homeDir + "/.shrimp", 0777)
@@ -27,11 +27,11 @@ func BuildArborescence() {
 	homeDir, _ := os.UserHomeDir();
 	var data string
 	if remote {
-		data = filesystemhelper.GetFileContentFromInternet(config)
+		data = fileSystem.GetFileContentFromInternet(config)
 	} else {
-		data = filesystemhelper.OpenFile(homeDir+ "/.shrimp/" + language + ".json")
+		data = fileSystem.OpenFile(homeDir+ "/.shrimp/" + language + ".json")
 	}
-	filesystemhelper.CreateDirectory(name)
+	fileSystem.CreateDirectory(name)
 	os.Chdir(name)
 	newDir, err := os.Getwd()
 	if err != nil {
@@ -43,7 +43,7 @@ func BuildArborescence() {
 	var config jsonparser.Config
 	jsonparser.ParseConfig([]byte(data), &config)
 
-	filesystemhelper.BuildProjectDirectories(config.Directories)
-	filesystemhelper.CreateProjectFiles(config.Files)
-	filesystemhelper.LaunchCommands(newDir ,config.Commands)
+	fileSystem.BuildProjectDirectories(config.Directories)
+	fileSystem.CreateProjectFiles(config.Files)
+	fileSystem.LaunchCommands(newDir ,config.Commands)
 }

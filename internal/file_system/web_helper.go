@@ -1,4 +1,4 @@
-package filesystemhelper
+package fileSystem
 
 import (
 	"io/ioutil"

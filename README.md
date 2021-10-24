@@ -20,10 +20,11 @@ With the local installation you can run the cli with this command `./{path/to/yo
 _this part is deprecated, while the arguments are still there I'm not satisfied with them so by the release of V1 these will drastically change_
 - **-n || --name**: is the name/directory of the project
 - **-l || --language**: is the language of the project to be chosen from a specific set of configuration files, stored in the configs folder
+- **-c || --config**: is to retreive a config file from the web (I'll be building a website to host config files, probably for the v1)
 
 ### Adding configuations
 
-The configurations files will be stored in the configs folder at ``$HOME/.shrimp``. All of them must be written in JSON
+The configurations files will be stored in the configs folder at ``$HOME/.shrimp`` or remotely. All of them must be written in JSON
 here is an example of configuration files
 
 ```json

@@ -18,5 +18,5 @@ bin/
 dist/
 node_modules/
 configs/
-.idea/
+.idea/@
 dist

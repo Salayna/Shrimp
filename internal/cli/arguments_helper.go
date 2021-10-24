@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/Salayna/shrimp/internal/filesystemhelper"
+	"github.com/Salayna/shrimp/internal/file_system"
 	"github.com/manifoldco/promptui"
 	"rsc.io/getopt"
 )
@@ -64,7 +64,7 @@ func promptLanguage() string {
 	homeDir, _ := os.UserHomeDir()
 	langPrompt := promptui.Select{
 		Label: "Language",
-		Items: filesystemhelper.GetConfigs(homeDir + "/.shrimp", ".json"),
+		Items: fileSystem.GetConfigs(homeDir + "/.shrimp", ".json"),
 	}
 
 	_, promptLanguage, langErr := langPrompt.Run()
